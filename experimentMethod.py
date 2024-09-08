@@ -568,8 +568,6 @@ class ExperimentMethod(QtWidgets.QWidget):
         self.parametersTable = QtWidgets.QTableWidget()
         self.parametersTable.setMinimumWidth(600)
 
-        # calcVarBoxLayout.addWidget(self.parametersTable, 0, 0)
-
         ####################################### Save directory box #############################################
         self.directoryLineEdit = QtWidgets.QLineEdit()
         self.directoryLineEdit.setMaximumSize(300, 50)
@@ -673,7 +671,6 @@ class ExperimentMethod(QtWidgets.QWidget):
         self.nGraph = 0 # To track number of times experimental graph has been constructed - if first time running the app, n = 0. Prevents multiple graphs being displayed
 
         ######################################## Platform diagram widget #########################################
-
         self.diaGroupBox = QtWidgets.QGroupBox("Experimental set-up")
         self.diaGroupBoxLayout = QtWidgets.QGridLayout()
         self.diaGroupBox.setLayout(self.diaGroupBoxLayout)
