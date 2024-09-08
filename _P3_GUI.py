@@ -9,7 +9,6 @@ from PyQt5 import QtCore, QtWidgets
 import sys
 import platformControl
 import experimentMethod
-import analysisHub
 
 class mainWindow(QtWidgets.QMainWindow):
     def __init__(self):
@@ -37,15 +36,9 @@ class mainWindow(QtWidgets.QMainWindow):
         self.controller = platformControl.PlatformControl(self, main=self)
         tab_2.addWidget(self.controller)
 
-        self.tab_3 = QtWidgets.QTabWidget()
-        tab_3 = QtWidgets.QGridLayout(self.tab_3)
-        self.analysisHub = analysisHub.analysisHub(self, main=self)
-        tab_3.addWidget(self.analysisHub)
-
         ####### Add tabs and titles to the master tab widget #######
         self.tab_main.addTab(self.tab_1, "Method builder")
         self.tab_main.addTab(self.tab_2, "Platform control")
-        self.tab_main.addTab(self.tab_3, "Analysis hub")
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Platform Controller")
