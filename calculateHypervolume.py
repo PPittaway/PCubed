@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from pymoo.indicators.hv import Hypervolume
 
-dir = r'C:\Users\pm15pmp\OneDrive - University of Leeds\Research\Year 4\Optimisation\Conventional\Simulated_experiments\CONSOLIDATED\HYPERVOLUMES\to_read\_100nm\hypervolume-for-other-targets'
+dir = r''
 
 # for x in os.walk(path):
 #     dir = x[0]
@@ -16,11 +16,11 @@ for file in glob.glob(dir + r'\*.xlsx'):
     currentData = pd.read_excel(file)
     numExps = currentData.shape[0]
     utopian = np.array([0.01, 0.02, 0.0])
-    nadir = np.array([0.05, 0.2086, 0.30])
+    nadir = np.array([1, 1, 1])
 
     surfConc = np.array(currentData.get("Surfactant concentration"))
     seedFrac = np.array(currentData.get("Seed fraction"))
-    sizeFunc = np.array(currentData.get("size function for 120"))
+    sizeFunc = np.array(currentData.get("Size function"))
 
     objectiveSpace = []
     for x, y, z in zip(surfConc, seedFrac, sizeFunc):
@@ -28,7 +28,7 @@ for file in glob.glob(dir + r'\*.xlsx'):
         objectiveSpace.append(F)
     objectiveSpace = np.array(objectiveSpace)
 
-    metric = Hypervolume(ref_point= np.array([0.05, 0.2086, 0.3]),
+    metric = Hypervolume(ref_point= np.array([1, 1, 1]),
                         norm_ref_point=True,
                         zero_to_one=True,
                         nds=True,
@@ -57,4 +57,4 @@ for file in glob.glob(dir + r'\*.xlsx'):
 
 hyperVolumesDict["AVERAGE"] = hyperVolumeAveList
 hyperVolumesSummary = pd.DataFrame.from_dict(hyperVolumesDict)
-hyperVolumesSummary.to_excel(dir + r'\hv-summary-100-120nm' + r'.xlsx')
+hyperVolumesSummary.to_excel(dir + r'\hv-summary' + r'.xlsx')
