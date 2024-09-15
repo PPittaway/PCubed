@@ -15,7 +15,7 @@ def getHypercubeSamplingParams(numExp, inputs):
         domain += ContinuousVariable(name=variable, description='', bounds=bound)
 
     ### create LHS suggested experiments ###
-    randomState = np.random.random_integers(52, 54)
+    randomState = np.random.random_integers(1, 100)
     strategy = LHS(domain, random_state=np.random.RandomState(randomState))
     hypersampling = strategy.suggest_experiments(numExp)
 
