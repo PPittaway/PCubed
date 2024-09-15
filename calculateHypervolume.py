@@ -1,14 +1,10 @@
 import glob
-import os
 import pandas as pd
 import numpy as np
 from pymoo.indicators.hv import Hypervolume
 
 dir = r''
 
-# for x in os.walk(path):
-#     dir = x[0]
-    
 fileCounter = 0
 hyperVolumesDict = {}
 for file in glob.glob(dir + r'\*.xlsx'):
