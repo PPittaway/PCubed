@@ -12,26 +12,26 @@ def func(X, a, b, c, d, e, f, g, h, i, m):
 ''' 
 Define path to save response surface plot
 '''
-savePath = r'C:\Users\pm15pmp\OneDrive - University of Leeds\Research\Year 4\Recipe-3\240429_optimisation\Response_surface_modelling\Updated_240911\Syn2-BA_conversion'
+savePath = r'add save path here'
 
 '''
 Define variable names [x, y, z, response]
 '''
-varNames = ["init_ratio", "surf_ratio", "seed_frac", "Syn2-BA_conversion"]
+varNames = ["xData", "yData", "zData", "response"]
 
 '''
-Insert experimental input values and response data
+Insert experimental input values and response data; data = [a, b, c, ..., n]; dataRange = [min, max]
 '''
-xData = [0.45, 0.714, 0.582, 0.494, 0.406, 0.758, 0.362, 0.67, 0.538, 0.626, 0.37369, 0.77806, 0.39281, 0.40633, 0.44177, 0.7796, 0.34, 0.34152, 0.37176, 0.34055, 0.34, 0.34453, 0.34082, 0.48603, 0.59227]
-xRange = [0.34, 0.78]
-yData = [2.0525, 1.8945, 1.7365, 1.8155, 1.5785, 1.9735, 2.2105, 1.4995, 1.6575, 2.1315, 1.49841, 2.24828, 1.7461, 1.47916, 1.46089, 1.46053, 1.46435, 1.51182, 1.46264, 1.81034, 1.46002, 1.69688, 1.92014, 1.54519, 2.25]
-yRange = [1.46, 2.25]
-zData = [0.031, 0.087, 0.073, 0.017, 0.129, 0.045, 0.115, 0.059, 0.101, 0.143, 0.08922, 0.07455, 0.02342, 0.07069, 0.02092, 0.14613, 0.01876, 0.05626, 0.01155, 0.08458, 0.01, 0.06405, 0.09039, 0.11445, 0.01093]
-zRange = [0.15, 0.15]
-response = [0.707605136, 0.797760519, 0.771039559, 0.666715087, 0.735104652, 0.932526199, 0.739772894, 0.647135884, 0.702242519, 0.863055184, 0.675674148, 0.706145165, 0.599420283, 0.557237262, 0.595438406, 0.80394028, 0.553238107, 0.544337868, 0.608538053, 0.72505826, 0.619414949, 0.722443304, 0.674074701, 0.702801874, 0.667100864]
+xData = []
+xRange = []
+yData = []
+yRange = []
+zData = []
+zRange = []
+response = []
 
 surfaceName = varNames[-1] # Sets the file save name as the response variable
-customLabel = ["0.15_seed_slice"] # Add custom label to save file
+customLabel = [""] # Add custom label to save file
 
 ### Handles file path naming ###
 if not customLabel[0]=="":
