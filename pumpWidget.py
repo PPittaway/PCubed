@@ -6,7 +6,6 @@ import teledyne_pump
 import milliGAT_pump
 import chemyxFusion4kX
 import chemyxFusion6kX
-# import win32com.client
 
 class PumpControl(QtWidgets.QWidget):
     def __init__(self, parent, pumpName:any):
